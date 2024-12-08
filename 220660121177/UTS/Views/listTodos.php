@@ -7,13 +7,13 @@
         style.CSS
         Berfungsi untuk membuat tampilan lebih menarik
     -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles.css">
     <!--
         script.js
         Berfungsi untuk mengirimkan data ke server
         serta menampilkan alert jika data berhasil di input
     -->
-    <script src="assets/js/script.js"></script>
+    <script src="assets/script.js"></script>
     
 </head>
 <body>
