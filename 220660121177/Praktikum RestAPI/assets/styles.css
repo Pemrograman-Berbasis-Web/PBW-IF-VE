@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+/* Body styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(./background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: Verdana;
+}
+  
+/* Wrapper styling */
+.wrapper {
+    background-color: #ffffff;
+    padding: 15px;
+    min-height: 10vh;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #737373;
+    border-radius: 15px;
+    width: 52%;
+    max-width: 800px;
+    margin: auto;
+}
+  
+/* Task container styling */
+.container {
+    width: 670px;
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: -2px 17.5px -11px 3.5px;
+    gap: 20px;
+    border-color: #ffffff;
+    max-width: 800px;
+}
+  
+/* Status container styling */
+.stats-container {
+    background-color: #7d98ef;
+    border-radius: 15px;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.stats-container .detail h1 {
+    font-size: 55px;
+    color: #ffffff;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+.stats-container .detail h1 span {
+    color: #366bdf;
+}
+.stats-container .detail p {
+    font-size: 20px;
+    color: #ffffff;
+    font-style: italic;
+}
+  
+/* Progress bar styling */
+#progressBar {
+    width: 120%;
+    height: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+#progress {
+    height: 15px;
+    background-color: #5497ef;
+    border-radius: 10px;
+    width: 0;
+}
+  
+/* Status numbers (circle) styling */
+.stats-numbers {
+    font-size: 2.5rem;
+    color: #ffffff;
+    background-color: #546bef;
+    padding: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    font-family: Helvetica;
+}
+  
+/* Task styling */
+#taskForm {
+    display: flex;
+    background-color: #7dc1ef;
+    padding: 10px;
+    border-radius: 15px;
+    gap: 10px;
+}
+#taskInput {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #565454;
+    outline: none;
+}
+  
+/* Add task button styling */
+#taskForm button {
+    background-color: #5470ef;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#taskForm button:hover {
+    background-color: #4477c4;
+}
+  
+/* Task list styling */
+.task-list {
+    font-family: Verdana;
+    color: #ffffff;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+}
+  
+/* Task container styling */
+.task {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #b87def;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    position: relative;
+}
+  
+/* Task title styling */
+.task .task-title {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 10px;
+}
+  
+/* Button styling */
+.task .actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-left: auto;
+}
+.task .actions button {
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+/* Complete button styling */
+.task .actions .complete {
+    background-color: #b87def;
+}
+.task .actions .complete:hover {
+    background-color: #fcfcfc;
+}
+  
+/* Delete button styling*/
+.task .actions .delete {
+    background-color: #b87def;
+}
+.task .actions .delete:hover {
+    background-color: #ff0000;
+}
+  
+/* Completed task styling */
+.task .completed span,
+.task .completed {
+      text-decoration: line-through;
+      color: #49baef;
+}
+
+/* For responsive interface */
+@media (max-width: 768px){
+    .container {
+        width: 100%;
+    }
+}
