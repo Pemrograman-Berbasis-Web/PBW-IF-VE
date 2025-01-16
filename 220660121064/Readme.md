@@ -1,9 +1,5 @@
 # 👋 Hi, I'm [Egina Fitrah Budiana]
 
-<h1 align="center">
-    <img src="https://id.pinterest.com/pin/875457615054007120/" alt="Gambar Profil">
-                    
-
 </h1>
 
 ## About Me
