@@ -1,0 +1,9 @@
+/* teks pada sel akan memiliki ukuran 14px */
+td {
+    font-size: 14px;
+  }
+  
+  /* teks pada baris header tabel akan memiliki ukuran 16px */
+  th {
+    font-size: 16px;
+  }
