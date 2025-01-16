@@ -18,4 +18,3 @@ class TodoController {
         return $this->model->deleteTodo($id);
     }
 }
-?>
