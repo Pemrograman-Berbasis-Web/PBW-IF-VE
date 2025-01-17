@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Lighter, calming background */
+    color: #444; /* Softer text color */
+    line-height: 1.6;
+    padding: 20px;
+    transition: background 1s ease-in-out; /* Smooth transition for background changes */
+}
+
+/* Container for layout */
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #ffffff; /* Slightly off-white */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Text center class */
+.text-center {
+    text-align: center;
+}
+
+/* Main title */
+h1 {
+    color: #3b5998; /* Calmer blue */
+    margin-bottom: 20px;
+}
+
+/* Profile image styles */
+img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid #5d8aa8; /* Muted blue-gray for border */
+}
+
+/* Section headings */
+h2 {
+    color: #5d8aa8; /* Calmer blue-gray */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #5d8aa8;
+    padding-bottom: 5px;
+}
+
+/* Blockquote styles */
+blockquote {
+    font-style: italic;
+    margin: 10px 0 20px;
+    padding: 10px;
+    background-color: #eef2f3; /* Soft gray background */
+    border-left: 5px solid #5d8aa8;
+    border-radius: 5px;
+    color: #555; /* Softer text color */
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd; /* Softer border color */
+}
+th {
+    background-color: #5d8aa8; /* Calmer blue-gray */
+    color: white;
+}
+
+/* List styles */
+ul, ol {
+    margin: 10px 0 20px 20px; /* Indent lists */
+    color: #444; /* Softer text color */
+}
+
+/* Audio player styles */
+audio {
+    display: block;
+    margin: 20px auto; /* Center audio player */
+}
+
+/* Video iframe styles */
+iframe {
+    display: block;
+    margin: 20px auto; /* Center video */
+    border: 2px solid #5d8aa8; /* Calmer border */
+    border-radius: 5px;
+}
+
+/* Link styles */
+a {
+    color: #5d8aa8; /* Muted blue-gray links */
+    text-decoration: none; /* Remove underline */
+}
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #3b5998; /* Slightly darker shade on hover */
+}
+
+/* Footer section */
+footer {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 0.9em;
+    color: #666; /* Calmer gray for footer text */
+}
+
+/* Embed audio styles */
+.audio-embed {
+    height: 228px;
+    width: 600px;
+    margin: 20px auto;
+    background: #eef2f3; /* Softer gray background */
+    border-radius: 5px;
+    border: 1px solid #ddd; /* Subtle border */
+}
