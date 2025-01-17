@@ -1,0 +1,21 @@
+Class_dan_Object
+Property_Method1
+Property_Method2
+Return
+Konstanta1
+Konstanta2
+Statis1
+Statis2
+Blok_Program
+Case
+Hello_World
+HTML
+Komentar
+Statement
+$This
+Contoh
+Self
+Private
+Protected
+Public
+Case Study

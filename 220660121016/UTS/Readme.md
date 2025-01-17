@@ -1,9 +1,10 @@
 # To-Do List Project
 
 ## 📋 Overview
-**To-Do List** ini dirancang untuk mempermudah pengelolaan tugas sehari-hari dengan menerapkan prinsip ***Object-Oriented Programming* (OOP)** dalam PHP serta menggunakan arsitektur ***Model-View-Controller* (MVC)**. Pendekatan ini memisahkan logika, tampilan antarmuka, dan pengelolaan data, sehingga kode menjadi lebih terstruktur, fleksibel, dan mudah untuk dikembangkan maupun dikelola.
+**To-Do List** ini dirancang untuk mempermudah pengelolaan tugas sehari-hari dengan menerapkan prinsip Object-Oriented Programming (OOP) dalam PHP serta menggunakan arsitektur Model-View-Controller (MVC). Pendekatan ini memisahkan logika, tampilan antarmuka, dan pengelolaan data, sehingga kode menjadi lebih terstruktur, fleksibel, dan mudah untuk dikembangkan maupun dikelola.
 
-**To-Do List** ini mendukung operasi **CRUD (*Create, Read, Update, Delete*)**, yang memungkinkan untuk mencatat tugas baru dengan menetapkan tanggal jatuh tempo, menandai tugas yang telah selesai, serta menghapus tugas yang tidak lagi relevan. Seluruh data tugas disimpan di dalam database, sehingga data tidak akan hilang dan dapat diakses kembali meskipun dimuat ulang atau digunakan di lain waktu.
+**To-Do List** ini mendukung operasi CRUD (Create, Read, Update, Delete), yang memungkinkan untuk mencatat tugas baru dengan menetapkan tanggal jatuh tempo, menandai tugas yang telah selesai, serta menghapus tugas yang tidak lagi relevan. Seluruh data tugas disimpan di dalam database, sehingga data tidak akan hilang dan dapat diakses kembali meskipun dimuat ulang atau digunakan di lain waktu.
+
 
 ## 🚀 Features
 1. **Task Management**
@@ -17,6 +18,7 @@
    - Statistik diperbarui secara otomatis menggunakan JavaScript.
 4. **Responsive Design**
    - Tampilan antarmuka responsif untuk berbagai ukuran layar.
+
 
 ## 📂 File Structure
 ```graphql
@@ -38,6 +40,7 @@
         └── script.js            # File JavaScript untuk interaksi tambahan
 ```
 
+
 ## 🛠️ How It Works
 1. Mengisi formulir untuk memasukkan nama tugas (*task*) dan tanggal jatuh tempo (*deadline*). Saat tombol `add` atau `ikon tambah (➕)` ditekan, data tugas dikirim ke server menggunakan metode `POST` dengan parameter `action=add`. Controller (`TodoController.php`) kemudian akan memproses data tersebut dan menyimpannya ke dalam tabel `todos` di database menggunakan fungsi yang ada di `TodoModel.php`.
 
@@ -49,21 +52,25 @@
 
 5. Statistik tugas akan dihitung berdasarkan jumlah total tugas menggunakan `const totalTasks = taskList.children.length;` dan jumlah tugas yang telah diselesaikan menggunakan `const completedTasks = document.querySelectorAll("#taskList .task.completed").length;`. Dengan data tersebut, persentase penyelesaian dapat dihitung menggunakan `const progressPercentage = totalTasks ? (completedTasks / totalTasks) * 100 : 0;`. Proses ini memastikan statistik tugas diperbarui secara dinamis setiap kali tugas ditambahkan, dihapus, atau ditandai selesai.
 
+
 ## 📸 Screenshots
 ### 1. Tampilan Awal To-Do List
 Tampilan awal pada To-Do List di mana belum ada tugas yang ditambahkan, statistik tugas menunjukkan `0/0`, progress bar kosong, dan daftar tugas tidak menampilkan item apa pun.
 
 ![Tampilan Awal](screenshots/tampilan-awal.png)
 
+
 ### 2. Tampilan To-Do List dengan Tugas
 Setiap tugas memiliki opsi untuk ditandai sebagai selesai (✔️) atau dihapus (✖️). Ketika sebuah tugas ditandai sebagai selesai, tugas tersebut secara otomatis diberi gaya garis coret (*strikethrough*) pada nama tugas (*task*) dan tanggal jatuh tempo (*deadline*), serta perubahan warna teks tugas untuk memberikan indikasi visual bahwa tugas tersebut telah selesai. Selain itu, statistik tugas akan diperbarui secara dinamis berdasarkan status tugas. Jumlah tugas yang telah selesai akan tercatat, dan persentase penyelesaian ditampilkan melalui indikator progress bar.
 
 ![Tampilan To-Do List](screenshots/tampilan-todolist.png)
 
+
 ### 3. Tampilan Saat Penghapusan Tugas
 Ketika mencoba menghapus sebuah tugas, dialog konfirmasi akan muncul untuk memastikan tindakan tersebut. Jika disetujui, maka tugas akan dihapus dari daftar dan database.
 
 ![Tampilan Penghapusan Tugas](screenshots/tampilan-penghapusan-tugas.png)
+
 
 ### 4. Tampilan Database
 Data tugas yang dimasukkan akan disimpan dalam tabel database bernama `todos`. Tabel ini terdiri dari beberapa kolom dengan fungsi sebagai berikut:
@@ -78,4 +85,7 @@ Data tugas yang dimasukkan akan disimpan dalam tabel database bernama `todos`. T
 
 ---
 
-Anisa Pebriyani Huslan | 220660121016 | IF-VE
+## 👩🏻‍💻 About The Creator
+- **Nama:** Anisa Pebriyani Huslan
+- **NPM/NIM:** 220660121016
+- **Kelas:** IF - VE

@@ -1,59 +1,36 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('form');
-    const taskInput = document.querySelector('input[name="task"]');
-    const todoList = document.querySelector('ul');
-
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const task = taskInput.value.trim();
-        if (!task) {
-            alert('Task cannot be empty!');
-            return;
-        }
-
-        try {
-            const response = await fetch('?action=add', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams({ task })
-            });
-
-            if (response.ok) {
-                const newTaskHTML = await response.text();
-                todoList.insertAdjacentHTML('beforeend', newTaskHTML);
-                taskInput.value = '';
-            } else {
-                alert('Failed to add task!');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    });
-    todoList.addEventListener('click', async (event) => {
-        if (event.target.tagName === 'A') {
+document.addEventListener("DOMContentLoaded", () => {
+    const completeLinks = document.querySelectorAll('a[data-action="complete"]');
+    completeLinks.forEach(link => {
+        link.addEventListener("click", (event) => {
             event.preventDefault();
-            const action = event.target.href.split('?action=')[1].split('&')[0];
-            const id = new URL(event.target.href).searchParams.get('id');
+            const taskId = link.dataset.id;
+            fetch(`?action=complete&id=${taskId}`, { method: "GET" })
+                .then(response => response.ok ? window.location.reload() : alert("Failed to mark as completed."));
+        });
+    });
 
-            if (!id) return;
-
-            try {
-                const response = await fetch(event.target.href, { method: 'GET' });
-
-                if (response.ok) {
-                    if (action === 'delete') {
-                        event.target.closest('li').remove();
-                    } else if (action === 'complete') {
-                        const li = event.target.closest('li');
-                        li.querySelector('a').remove();
-                        li.textContent = li.textContent.trim();
-                    }
-                } else {
-                    alert(`Failed to ${action} task!`);
-                }
-            } catch (error) {
-                console.error('Error:', error);
+    const deleteLinks = document.querySelectorAll('a[data-action="delete"]');
+    deleteLinks.forEach(link => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const taskId = link.dataset.id;
+            if (confirm("Are you sure you want to delete this task?")) {
+                fetch(`?action=delete&id=${taskId}`, { method: "GET" })
+                    .then(response => response.ok ? window.location.reload() : alert("Failed to delete task."));
             }
-        }
+        });
+    });
+
+    const taskForm = document.querySelector("form");
+    taskForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const taskInput = taskForm.querySelector('input[name="task"]');
+        const task = taskInput.value.trim();
+        if (task === "") return alert("Task cannot be empty.");
+        fetch("?action=add", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({ task: task }),
+        }).then(response => response.ok ? window.location.reload() : alert("Failed to add task."));
     });
 });
