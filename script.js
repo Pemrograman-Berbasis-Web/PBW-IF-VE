@@ -1,4 +1,3 @@
-
 let todo = JSON.parse(localStorage.getItem("todo")) || [];
 const todoInput = document.getElementById("todoInput");
 const todoList = document.getElementById("todoList");
@@ -83,4 +82,3 @@ function deleteAllTasks() {
 
 function saveToLocalStorage() {
   localStorage.setItem("todo", JSON.stringify(todo));
-}
