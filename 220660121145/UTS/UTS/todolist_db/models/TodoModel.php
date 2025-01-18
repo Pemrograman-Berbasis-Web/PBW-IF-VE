@@ -1,7 +1,7 @@
 <?php
 // models/TodoModel.php
 
-require_once 'config/Database.php';
+require_once 'core/Database.php';
 
 class TodoModel {
     private $conn;
