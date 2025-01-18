@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Pribadi - Aarizki Hidayah Tulloh</title>
+    <link rel="stylesheet" href="Case Study.css"> <!-- Updated CSS file link -->
+    <style>
+        /* Reset default margins and paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Video Background Styles */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; /* Send the video to the back */
+        }
+
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the entire area */
+            pointer-events: none; /* Prevent interaction with the video */
+            opacity: 0.7; /* Adjust opacity if needed */
+        }
+
+        /* Light and Dark Theme Variables */
+        :root {
+            /* Light Theme Colors */
+            --background-color: #f3f6f9;
+            --text-color: #333;
+            --container-bg: #fff;
+            --heading-color: #2c3e50;
+            --border-color: #2980b9;
+            --blockquote-bg: #f4f8fb;
+            --link-color: #2980b9;
+            --link-hover-color: #1a5276;
+        }
+
+        /* Dark Theme Variables */
+        body.dark-theme {
+            --background-color: #333;
+            --text-color: #f4f4f9;
+            --container-bg: #444;
+            --heading-color: #f4f4f9;
+            --border-color: #76c7c0;
+            --blockquote-bg: #555;
+            --link-color: #76c7c0;
+            --link-hover-color: #bbded6;
+        }
+
+        /* Theme toggle button styles */
+        .theme-toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--container-bg);
+            color: var(--text-color);
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 1.5em; /* Slightly larger font for emphasis */
+        }
+
+        /* Hover effect for the button */
+        .theme-toggle-btn:hover {
+            background-color: var(--border-color);
+            color: var(--container-bg);
+        }
+
+        /* Body styles using theme variables */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            transition: background-color 0.3s ease; /* Smooth transition for background */
+        }
+
+        /* Transparent background class */
+        .transparent-bg {
+            background-color: transparent !important; /* Ensure transparency */
+        }
+
+        /* Container for layout */
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: var(--container-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            position: relative; /* Added to position pseudo-elements */
+        }
+
+        /* Section headings */
+        h1 {
+            color: var(--heading-color);
+            font-size: 2.4em; /* Increased font size for a more impactful title */
+            font-weight: 700; /* Bold weight for emphasis */
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+        }
+
+        /* Tombol Ikon di Pojok Kiri Atas */
+        .corner-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #2980b9; /* Warna latar awal tombol */
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover efek untuk tombol */
+        .corner-btn:hover {
+            background-color: transparent; /* Ubah background tombol menjadi transparan saat dihover */
+        }
+
+        /* Responsif terhadap tampilan tombol */
+        @media (max-width: 600px) {
+            .corner-btn {
+                padding: 8px; /* Ukuran tombol lebih kecil di layar kecil */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="./test/2715412-uhd_3840_2160_30fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        // Create theme toggle button
+        const themeToggleBtn = document.createElement('button');
+        themeToggleBtn.innerHTML = "🌞"; // Start with sun icon
+        themeToggleBtn.className = "theme-toggle-btn";
+        document.body.prepend(themeToggleBtn);
+
+        let darkTheme = false;
+
+        // Toggle theme on button click
+        themeToggleBtn.addEventListener("click", () => {
+            darkTheme = !darkTheme;
+            document.body.classList.toggle("dark-theme", darkTheme);
+            themeToggleBtn.innerHTML = darkTheme ? "🌙" : "🌞"; // Toggle icon
+        });
+
+        // Get the corner button element
+        const cornerBtn = document.getElementById('corner-btn');
+
+        // Toggle body transparency on button click
+        cornerBtn.addEventListener('click', () => {
+            document.body.classList.toggle('transparent-bg');
+
+            // Change background color of the button based on condition
+            if (document.body.classList.contains('transparent-bg')) {
+                cornerBtn.style.backgroundColor = 'transparent'; // Make button transparent
+            } else {
+                cornerBtn.style.backgroundColor = '#2980b9'; // Restore original color
+            }
+        });
+    </script>
+
+    <div class="container">
+
+ <header>
+    <h1 class="text-center typing-effect" id="name">Aarizki Hidayah Tulloh</h1>
+    <p class="text-center typing-effect" id="title">Web Developer</p>
+</header>
+
+
+
+        <div class="profile-section text-center">
+            <img src="./test/97883472_p0.jpg" alt="Gambar Profil" class="profile-img">
+        </div>
+
+        <section class="about-section">
+            <h2 class="text-center">Tentang Saya</h2>
+            <p class="text-center">Saya adalah seorang pengembang web yang penuh semangat.</p>
+            <blockquote class="text-center">"Belajar dari kesalahan" - Aarizki Hidayah Tulloh</blockquote>
+        </section>
+
+        <section class="experience-section">
+            <h2 class="text-center">Pengalaman Kerja</h2>
+            <table>
+                <tr>
+                    <th>Pekerjaan</th>
+                    <th>Institusi</th>
+                    <th>Tahun</th>
+                </tr>
+                <tr>
+                    <td>Mahasiswa</td>
+                    <td>Universitas Sebelas April</td>
+                    <td>2024-2025</td>
+                </tr>
+                <tr>
+                    <td>Programmer</td>
+                    <td>UNSAP</td>
+                    <td>2024</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="hobbies-section">
+            <h2>Hobi Saya</h2>
+            <ul>
+                <li>Main Game</li>
+                <li>Menonton Anime</li>
+                <li>Healing</li>
+            </ul>
+            <ol>
+                <li>Belajar Bahasa Asing</li>
+                <li>Bahasa Jepang</li>
+                <li>Menggambar</li>
+            </ol>
+        </section>
+
+        <section class="audio-section text-center">
+            <h2>Lagu Favorit</h2>
+            <audio controls>
+                <source src="./test/Menangis-Untuk-Hujan.mp3" type="audio/mpeg">
+                Browser Anda tidak mendukung pemutar audio.
+            </audio>
+        </section>
+
+        <section class="video-section text-center">
+            <h2 class="text-center">Video Kesukaan</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/NY0ffyEu6uo?si=CRfC3z-0zt7KmBAC&amp;start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>       
+        </section>
+
+        <h2 class="text-center">Ikuti Saya</h2>
+        <p class="text-center">
+            <a href="https://www.instagram.com/arizki_hidayah_t/profilecard/?igsh=Z3U3NHJiZW96bGFx" target="_blank">Instagram</a> |
+            <a href="https://github.com/Ikii-yue/PBW-IF-VE" target="_blank">Github</a>
+        </p>
+
+        </section>
+        <footer class="text-center">
+            <p>&copy; 2024 Aarizki Hidayah Tulloh. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
